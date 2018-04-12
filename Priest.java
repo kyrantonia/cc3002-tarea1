@@ -1,17 +1,18 @@
-class Goblin extends Attacker implements IAttacker{
-    Goblin(){
-        super(150,30,400);
+public class Priest extends Attacker implements IAttacker {
+
+    Priest() {
+        super(100, 15, 700);
     }
 
     @Override
     public void attack(IAttacker attacker) {
         if (this.canFight())
-            attackedByGoblin(this);
+            attacker.attackedByPriest(this);
     }
-
 
     @Override
     public void attackedByGoblin(Goblin goblin) {
+        this.receiveDamage(goblin.calculateDamage(2.0));
     }
 
     @Override
@@ -21,9 +22,7 @@ class Goblin extends Attacker implements IAttacker{
 
     @Override
     public void attackedByKnight(Knight knight) {
-        this.receiveDamage(knight.calculateDamage(1.25));
     }
-
 
 
 

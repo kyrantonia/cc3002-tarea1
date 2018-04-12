@@ -6,36 +6,27 @@ class Knight extends Attacker implements IAttacker {
 
     @Override
     public void attack(IAttacker attacker) {
+        if (this.canFight())
+            attacker.attackedByKnight(this);
+    }
 
+
+    @Override
+    public void attackedByGoblin(Goblin goblin) {
+        this.receiveDamage(goblin.calculateDamage(0.5));
     }
 
     @Override
-    public void attackKnight(Knight knight) {
-
+    public void attackedByIceGolem(IceGolem iceGolem) {
+        this.receiveDamage(iceGolem.calculateDamage(1.5));
     }
 
     @Override
-    public void attackGoblin(Goblin goblin) {
-
+    public void attackedByKnight(Knight knight) {
+        this.receiveDamage(knight.calculateDamage(1.0));
     }
 
-    @Override
-    public void attackIceGolem(IceGolem iceGolem) {
 
-    }
 
-    @Override
-    public void attackUndead(Undead undead) {
 
-    }
-
-    @Override
-    public void attackFireMage(FireMage fireMage) {
-
-    }
-
-    @Override
-    public void attackPriost(Priost priost) {
-
-    }
 }

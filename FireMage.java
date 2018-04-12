@@ -5,36 +5,24 @@ public class FireMage extends Attacker implements IAttacker  {
 
     @Override
     public void attack(IAttacker attacker) {
-
+        if (this.canFight())
+            attacker.attackedByFireMage(this);
     }
 
     @Override
-    public void attackKnight(Knight knight) {
-
+    public void attackedByGoblin(Goblin goblin) {
+        this.receiveDamage(goblin.calculateDamage(1.5));
     }
 
     @Override
-    public void attackGoblin(Goblin goblin) {
-
+    public void attackedByIceGolem(IceGolem iceGolem) {
+        this.receiveDamage(iceGolem.calculateDamage(2.0));
     }
 
     @Override
-    public void attackIceGolem(IceGolem iceGolem) {
-
+    public void attackedByKnight(Knight knight) {
+        this.receiveDamage(knight.calculateDamage(1.5));
     }
 
-    @Override
-    public void attackUndead(Undead undead) {
 
-    }
-
-    @Override
-    public void attackFireMage(FireMage fireMage) {
-
-    }
-
-    @Override
-    public void attackPriost(Priost priost) {
-
-    }
 }
