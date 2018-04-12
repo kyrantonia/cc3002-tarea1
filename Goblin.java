@@ -1,4 +1,4 @@
-public class Goblin extends Attacker{
+class Goblin extends Attacker implements IAttacker{
     Goblin(){
         super(150,30,400);
     }
@@ -9,7 +9,7 @@ public class Goblin extends Attacker{
     }
 
     @Override
-    public void attackHuman(Human human) {
+    public void attackKnight(Knight knight) {
 
     }
 
@@ -20,6 +20,21 @@ public class Goblin extends Attacker{
 
     @Override
     public void attackIceGolem(IceGolem iceGolem) {
+
+    }
+
+    @Override
+    public void attackUndead(Undead undead) {
+
+    }
+
+    @Override
+    public void attackFireMage(FireMage fireMage) {
+
+    }
+
+    @Override
+    public void attackPriost(Priost priost) {
 
     }
 }

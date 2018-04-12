@@ -1,12 +1,11 @@
-class IceGolem extends Attacker implements IAttacker {
-
-    IceGolem() {
-        super(250, 50, 800);
+public class FireMage extends Attacker implements IAttacker  {
+    FireMage() {
+        super(350, 80, 650);
     }
 
     @Override
     public void attack(IAttacker attacker) {
-        attackIceGolem(this);
+
     }
 
     @Override

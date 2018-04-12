@@ -1,12 +1,12 @@
-class IceGolem extends Attacker implements IAttacker {
+public class Priost extends Attacker implements IAttacker {
 
-    IceGolem() {
-        super(250, 50, 800);
+    Priost() {
+        super(100, 15, 700);
     }
 
     @Override
     public void attack(IAttacker attacker) {
-        attackIceGolem(this);
+
     }
 
     @Override
