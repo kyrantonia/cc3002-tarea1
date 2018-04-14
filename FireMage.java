@@ -1,8 +1,8 @@
-public class FireMage extends Attacker implements IAttacker  {
-    FireMage() {
-        super(350, 80, 650);
-    }
+public class FireMage extends Human  {
 
+    FireMage(String name) {
+        super(350, 80, 650, name);
+    }
     @Override
     public void attack(IAttacker attacker) {
         if (this.canFight())
@@ -23,6 +23,7 @@ public class FireMage extends Attacker implements IAttacker  {
     public void attackedByKnight(Knight knight) {
         this.receiveDamage(knight.calculateDamage(1.5));
     }
+
 
 
 }

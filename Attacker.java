@@ -4,23 +4,25 @@ abstract class Attacker implements IAttacker {
     private double HPMax;
 
     Attacker(double HP, double AP, double HPMax){
-        HP =this.HP;
-        AP=this.AP;
-        HPMax=this.HPMax;
+        this.HP=HP;
+        this.AP=AP;
+        this.HPMax=HPMax;
     }
-
+    @Override
+    public void attack(IAttackable attackable) {
+    }
     double getHP() {
-        return HP;
+        return this.HP;
     }
     void receiveDamage(double damage){
         this.HP=Math.max(this.HP-damage,0);
     }
     double getHPMax() {
-        return HPMax;
+        return this.HPMax;
     }
 
     double getAP() {
-        return AP;
+        return this.AP;
     }
     public boolean canFight(){
         return this.getHP()>0;
@@ -28,6 +30,14 @@ abstract class Attacker implements IAttacker {
 
     double calculateDamage(double factor){
         return this.getAP()*factor;
+    }
+
+    void increaseHP(double increment){
+        this.HP=Math.min(this.HP+increment,getHPMax());
+    }
+
+    double calculateIncrement( double factor){
+        return factor*getHPMax();
     }
 
     @Override

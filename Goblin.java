@@ -1,4 +1,5 @@
-class Goblin extends Attacker implements IAttacker{
+class Goblin extends Attacker {
+
     Goblin(){
         super(150,30,400);
     }
@@ -9,7 +10,13 @@ class Goblin extends Attacker implements IAttacker{
             attackedByGoblin(this);
     }
 
+    @Override
+    public void attack(IAttackable attackable) {
+        if (this.canFight()){
+            attackable.attackedByGoblin(this);
+        }
 
+    }
     @Override
     public void attackedByGoblin(Goblin goblin) {
     }
@@ -24,7 +31,8 @@ class Goblin extends Attacker implements IAttacker{
         this.receiveDamage(knight.calculateDamage(1.25));
     }
 
-
-
+    void attackFruitTree() {
+        this.increaseHP(calculateIncrement(0.15));
+    }
 
 }

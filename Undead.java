@@ -1,5 +1,5 @@
 class Undead extends Attacker implements IAttacker {
-    double HP;
+
     Undead(){
         super(400,60,900);
     }

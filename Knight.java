@@ -1,7 +1,7 @@
-class Knight extends Attacker implements IAttacker {
+class Knight extends Human{
 
-    Knight() {
-        super(200, 35, 750);
+    Knight(String name) {
+        super(200, 35, 750, name);
     }
 
     @Override

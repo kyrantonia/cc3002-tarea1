@@ -1,7 +1,7 @@
-public class Priest extends Attacker implements IAttacker {
+class Priest extends Human {
 
-    Priest() {
-        super(100, 15, 700);
+    Priest(String name) {
+        super(100, 15, 700, name);
     }
 
     @Override
