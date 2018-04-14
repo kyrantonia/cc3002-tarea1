@@ -7,7 +7,7 @@ class IceGolem extends Attacker implements IAttacker {
     @Override
     public void attack(IAttacker attacker) {
         if (this.canFight())
-            attackedByIceGolem(this);
+            attacker.attackedByIceGolem(this);
     }
 
     @Override

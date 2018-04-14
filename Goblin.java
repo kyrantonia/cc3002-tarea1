@@ -7,7 +7,7 @@ class Goblin extends Attacker {
     @Override
     public void attack(IAttacker attacker) {
         if (this.canFight())
-            attackedByGoblin(this);
+            attacker.attackedByGoblin(this);
     }
 
     @Override
