@@ -19,18 +19,19 @@ public abstract class Human extends Attacker {
         return this.name;
     }
 
-     void attackRock() {
-         this.receiveDamage(calculateDamage(1));
-     }
-     void attackFruitTree() {
-        this.increaseHP(calculateIncrement(0.3));
-     }
-     @Override
-     public void attack(IAttackable attackable) {
-         if (this.canFight()){
-             attackable.attackedByHuman(this);
-         }
+    public void attackRock() {
+     this.receiveDamage(calculateDamage(1));
+    }
+    public void attackFruitTree() {
+    this.increaseHP(calculateIncrement(0.3));
+    }
 
+    @Override
+    public void attack(IAttackable attackable) {
+     if (this.canFight()){
+         attackable.attackedByHuman(this);
      }
+
+    }
 
  }

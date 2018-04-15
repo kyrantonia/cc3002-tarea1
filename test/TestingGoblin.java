@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 public class TestingGoblin {
     private Goblin goblin1;
     private Attacker goblin2;
+    private Attacker iceGolem;
 
     private static Attacker attackedKnight;
     private static Goblin goblinAttackAttacker;
@@ -19,6 +20,7 @@ public class TestingGoblin {
     private static Goblin goblinAttackedByKnight;
 
     private static Goblin goblinAttackFruitTree;
+    private static Goblin goblinAttackFruitTreeTwice;
 
     @BeforeClass
     public static void beforeTests() {
@@ -41,12 +43,17 @@ public class TestingGoblin {
         goblinAttackFruitTree=new Goblin();
         goblinAttackFruitTree.attackFruitTree();
 
+        goblinAttackFruitTreeTwice=new Goblin();
+        goblinAttackFruitTreeTwice.attackFruitTree();
+        goblinAttackFruitTreeTwice.attackFruitTree();
+
     }
 
     @Before
     public void setup(){
         goblin1=new Goblin();
         goblin2=new Goblin();
+        iceGolem=new IceGolem();
     }
     @Test
     public void testNotNull(){
@@ -58,6 +65,7 @@ public class TestingGoblin {
     public void testEqualsClass(){
         assertEquals(goblin1.getClass(),goblin2.getClass());
         assertEquals(goblin1.getClass(),(new Goblin()).getClass());
+        assertNotEquals(goblin1.getClass(),iceGolem.getClass());
     }
 
 
@@ -69,29 +77,32 @@ public class TestingGoblin {
     }
 
     @Test
-    public void attackAttackable() {
+    public void testAttackAttackable() {
         double expected=400*0.15+150;
         assertEquals(210.0,goblinAttackAttackable.getHP(),0.1);
         assertEquals(expected,goblinAttackAttackable.getHP(),0.1);
     }
 
     @Test
-    public void attackedByGoblin() {
+    public void testAttackedByGoblin() {
         assertEquals(150.0,goblinAttackedByGoblin.getHP(),0.1);
     }
 
     @Test
-    public void attackedByKnight() {
+    public void testAttackedByKnight() {
         double expected=150-1.25*35;
         assertEquals(expected,goblinAttackedByKnight.getHP(),0.1);
         assertEquals(106.25,goblinAttackedByKnight.getHP(),0.1);
     }
 
     @Test
-    public void attackFruitTree() {
-        double expected=400*0.15+150;
+    public void testAttackFruitTree() {
+        double expected1=400*0.15+150;
+        double expected2=400*0.15+400*0.15+150;
         assertEquals(210.0,goblinAttackFruitTree.getHP(),0.1);
-        assertEquals(expected,goblinAttackFruitTree.getHP(),0.1);
+        assertEquals(expected1,goblinAttackFruitTree.getHP(),0.1);
+        assertEquals(270.0,goblinAttackFruitTreeTwice.getHP(),0.1);
+        assertEquals(expected2,goblinAttackFruitTreeTwice.getHP(),0.1);
     }
 }
 

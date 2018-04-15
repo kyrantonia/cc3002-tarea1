@@ -1,13 +1,13 @@
 package test;
 import main.*;
 import org.junit.*;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 public class TestingUndead {
     private Undead undead1;
     private Attacker undead2;
+    private Attacker iceGolem;
 
     private static Attacker attackedKnight;
     private static Undead undeadAttackAttacker;
@@ -59,6 +59,7 @@ public class TestingUndead {
     public void setup(){
         undead1 =new Undead();
         undead2 =new Undead();
+        iceGolem=new IceGolem();
     }
     @Test
     public void testNotNull(){
@@ -70,46 +71,47 @@ public class TestingUndead {
     public void testEqualsClass(){
         assertEquals(undead1.getClass(),undead2.getClass());
         assertEquals(undead1.getClass(),(new Undead()).getClass());
+        assertNotEquals(undead1.getClass(),iceGolem.getClass());
     }
 
 
     @Test
-    public void attack() {
+    public void testAttack() {
         double expected=200-1.0*30;
         assertEquals(expected,attackedKnight.getHP(),0.1);
         assertEquals(170,attackedKnight.getHP(),0.1);
     }
 
     @Test
-    public void attackedByFireMage() {
+    public void testAttackedByFireMage() {
         double expected=400-0.5*10;
         assertEquals(expected, undeadAttackedByFireMage.getHP(),0.1);
         assertEquals(395, undeadAttackedByFireMage.getHP(),0.1);
     }
 
     @Test
-    public void attackedByGoblin() {
+    public void testAttackedByGoblin() {
         double expected=400;
         assertEquals(expected, undeadAttackedByGoblin.getHP(),0.1);
         assertEquals(400, undeadAttackedByGoblin.getHP(),0.1);
     }
 
     @Test
-    public void attackedByKnight() {
+    public void testAttackedByKnight() {
         double expected=400-1.0*35;
         assertEquals(expected, undeadAttackedByKnight.getHP(),0.1);
         assertEquals(365.0, undeadAttackedByKnight.getHP(),0.1);
     }
 
     @Test
-    public void attackedByPriest() {
+    public void testAttackedByPriest() {
         double expected=400-5.0*15;
         assertEquals(expected, undeadAttackedByPriest.getHP(),0.1);
         assertEquals(325.0, undeadAttackedByPriest.getHP(),0.1);
     }
 
     @Test
-    public void attackedByUndead() {
+    public void testAttackedByUndead() {
         double expected=400;
         assertEquals(expected, undeadAttackedByUndead.getHP(),0.1);
         assertEquals(400, undeadAttackedByUndead.getHP(),0.1);

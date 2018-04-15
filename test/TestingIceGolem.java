@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 public class TestingIceGolem {
     private IceGolem iceGolem1;
     private Attacker iceGolem2;
+    private Attacker undead2;
 
     private static Attacker attackedKnight;
     private static IceGolem iceGolemAttackAttacker;
@@ -58,6 +59,7 @@ public class TestingIceGolem {
     public void setup(){
         iceGolem1=new IceGolem();
         iceGolem2=new IceGolem();
+        undead2=new Undead();
     }
     @Test
     public void testNotNull(){
@@ -69,45 +71,46 @@ public class TestingIceGolem {
     public void testEqualsClass(){
         assertEquals(iceGolem1.getClass(),iceGolem2.getClass());
         assertEquals(iceGolem1.getClass(),(new IceGolem()).getClass());
+        assertNotEquals(iceGolem1.getClass(),undead2.getClass());
     }
 
     @Test
-    public void attack() {
+    public void testAttack() {
         double expected=200-1.5*30;
         assertEquals(expected,attackedKnight.getHP(),0.1);
         assertEquals(155,attackedKnight.getHP(),0.1);
     }
 
     @Test
-    public void attackedByFireMage() {
+    public void testAttackedByFireMage() {
         double expected=250-5.0*10;
         assertEquals(expected, iceGolemAttackedByFireMage.getHP(),0.1);
         assertEquals(200, iceGolemAttackedByFireMage.getHP(),0.1);
     }
 
     @Test
-    public void attackedByGoblin() {
+    public void testAttackedByGoblin() {
         double expected=250;
         assertEquals(expected, iceGolemAttackedByGoblin.getHP(),0.1);
         assertEquals(250, iceGolemAttackedByGoblin.getHP(),0.1);
     }
 
     @Test
-    public void attackedByIceGolem() {
+    public void testAttackedByIceGolem() {
         double expected=250-30*1.0;
         assertEquals(expected,iceGolemAttackedByIceGolem.getHP(),0.1);
         assertEquals(220,iceGolemAttackedByIceGolem.getHP(),0.1);
     }
 
     @Test
-    public void attackedByKnight() {
+    public void testAttackedByKnight() {
         double expected=250-0.5*35;
         assertEquals(expected,iceGolemAttackedByKnight.getHP(),0.1);
         assertEquals(232.5,iceGolemAttackedByKnight.getHP(),0.1);
     }
 
     @Test
-    public void attackedByUndead() {
+    public void testAttackedByUndead() {
         double expected=250;
         assertEquals(expected,iceGolemAttackedByUndead.getHP(),0.1);
         assertEquals(250,iceGolemAttackedByUndead.getHP(),0.1);

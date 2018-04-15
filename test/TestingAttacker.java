@@ -126,7 +126,7 @@ public class TestingAttacker {
         assertEquals(30.0, goblin1.calculateDamage(1),0.1);
     }
     @Test
-    public void TestIncreaseHP(){
+    public void testIncreaseHP(){
         assertEquals(150,goblinWithIncreasedHPIn0.getHP(),0.1);
         assertEquals(170,goblinWithIncreasedHPIn20.getHP(),0.1);
         assertEquals(400,goblinWithIncreasedHPIn250.getHP(),0.1);

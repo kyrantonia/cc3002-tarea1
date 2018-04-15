@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 public class TestingPriest {
     private Priest priest1;
     private Attacker priest2;
+    private Human priest3;
+    private Human knight2;
 
     private static  Attacker attackedUndead;
     private static Priest priestAttackAttacker;
@@ -36,6 +38,8 @@ public class TestingPriest {
     public void setup(){
         priest1 =new Priest("Juana");
         priest2 =new Priest("Mary");
+        priest3=new Priest("Pedro");
+        knight2=new Knight("Pedro");
     }
     @Test
     public void testNotNull(){
@@ -47,25 +51,27 @@ public class TestingPriest {
     public void testEqualsClass(){
         assertEquals(priest1.getClass(), priest2.getClass());
         assertEquals(priest1.getClass(),(new Priest("Sofia")).getClass());
+        assertEquals(priest3.getClass(),priest1.getClass());
+        assertNotEquals(knight2.getClass(),priest1.getClass());
     }
 
 
     @Test
-    public void attack() {
+    public void testAttack() {
         double expected=400-5.0*15;
         assertEquals(expected, attackedUndead.getHP(),0.1);
         assertEquals(325.0, attackedUndead.getHP(),0.1);
     }
 
     @Test
-    public void attackedByGoblin() {
+    public void testAttackedByGoblin() {
         double expected=100-1.0*30;
         assertEquals(expected, priestAttackedByGoblin.getHP(),0.1);
         assertEquals(70, priestAttackedByGoblin.getHP(),0.1);
     }
 
     @Test
-    public void attackedByKnight() {
+    public void testAttackedByKnight() {
         double expected=100;
         assertEquals(expected, priestAttackedByKnight.getHP(),0.1);
         assertEquals(100.0, priestAttackedByKnight.getHP(),0.1);
