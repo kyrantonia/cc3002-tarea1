@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * Subclase de Human donde sus objectos (knight) atacan con un factor 1 a knight,
+ * 1.5 a fireMage, 1.25 a goblin, 0.5 a iceGolem, y 1 a undead.
+ * Además, no le hacen daño a priest.
+ * @author Kyra
+ */
+
+
 public class Knight extends Human {
 
     public Knight(String name) {

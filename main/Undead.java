@@ -1,4 +1,9 @@
 package main;
+/**
+ * Subclase de Attacker donde sus objectos (undead) atacan con un factor 1 a knight, fireMage, priest y goblin.
+ * Además,quienes pertenecen a esta clase no le hacen daño a iceGolem, y undead
+ * @author Kyra
+ */
 
 public class Undead extends Attacker implements IAttacker {
 

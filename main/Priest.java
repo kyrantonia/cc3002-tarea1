@@ -1,5 +1,9 @@
 package main;
-
+/**
+ * Subclase de Human donde sus objetos (priest) atacan con un factor 5 a undead y no le hace daño a knight,
+ * fireMage, priest, goblin y iceGolem.
+ * @author Kyra
+ */
 public class Priest extends Human {
 
     public Priest(String name) {

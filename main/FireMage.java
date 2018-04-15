@@ -1,5 +1,11 @@
 package main;
 
+/**
+ * Subclase de Human donde sus objectos (fireMage) atacan con un factor 2 a knight,
+ * 2 a fireMage, 2 a priest, 2 a goblin, 5 a iceGolem,
+ * y 0.5 a undead.
+ * @author Kyra
+ */
 public class FireMage extends Human {
 
     public FireMage(String name) {

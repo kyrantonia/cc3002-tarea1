@@ -1,5 +1,10 @@
 package main;
-
+/**
+ * Subclase de Attacker donde sus objectos (iceGolem) atacan con un factor 1.5 a knight,
+ * 2 a fireMage, 2 a priest, 2 a goblin, 1 a iceGolem,
+ * y 2 a undead.
+ * @author Kyra
+ */
 public class IceGolem extends Attacker implements IAttacker {
 
     public IceGolem() {
