@@ -1,4 +1,6 @@
-class Rock implements IAttackable {
+package main;
+
+public class Rock implements IAttackable {
 
     @Override
     public void attackedByGoblin(Goblin goblin) {

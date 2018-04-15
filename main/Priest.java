@@ -1,6 +1,8 @@
-class Priest extends Human {
+package main;
 
-    Priest(String name) {
+public class Priest extends Human {
+
+    public Priest(String name) {
         super(100, 15, 700, name);
     }
 
@@ -12,12 +14,7 @@ class Priest extends Human {
 
     @Override
     public void attackedByGoblin(Goblin goblin) {
-        this.receiveDamage(goblin.calculateDamage(2.0));
-    }
-
-    @Override
-    public void attackedByIceGolem(IceGolem iceGolem) {
-        this.receiveDamage(iceGolem.calculateDamage(2.0));
+        this.receiveDamage(goblin.calculateDamage(1.0));
     }
 
     @Override

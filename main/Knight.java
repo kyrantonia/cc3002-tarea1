@@ -1,6 +1,8 @@
-class Knight extends Human{
+package main;
 
-    Knight(String name) {
+public class Knight extends Human {
+
+    public Knight(String name) {
         super(200, 35, 750, name);
     }
 

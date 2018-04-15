@@ -1,4 +1,6 @@
-interface IAttacker {
+package main;
+
+public interface IAttacker {
     boolean canFight();
     void attack(IAttacker attacker);
     void attack(IAttackable attackable);

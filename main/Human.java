@@ -1,25 +1,21 @@
- abstract class Human extends Attacker {
-    private double currentHP;
+package main;
+
+public abstract class Human extends Attacker {
+    private double HP;
     private double initialHP;
     private double AP;
-    private double MaxHP;
     private String name;
-    private Human(){
-        super(350, 80, 650);
+    public Human(){
+        this(350,80,650,"Juan");
     }
-    Human(String name) {
-         this(350, 80, 650,"Juan");
-     }
-    Human(double HP, double AP, double HPMax, String name ){
-        this();
-        this.initialHP =HP;
-        this.AP=AP;
-        this.MaxHP =HPMax;
+    public Human(double HP, double AP, double maxHP, String name ){
+        super(HP,AP,maxHP);
         this.name=name;
-        this.currentHP=HP;
     }
-
-     public String get_name() {
+    public Human(String name){
+        this(350,80,650,name);
+    }
+    public String getName() {
         return this.name;
     }
 

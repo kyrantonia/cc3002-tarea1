@@ -1,6 +1,8 @@
-class Goblin extends Attacker {
+package main;
 
-    Goblin(){
+public class Goblin extends Attacker {
+
+    public Goblin(){
         super(150,30,400);
     }
 
@@ -17,13 +19,9 @@ class Goblin extends Attacker {
         }
 
     }
-    @Override
-    public void attackedByGoblin(Goblin goblin) {
-    }
 
     @Override
-    public void attackedByIceGolem(IceGolem iceGolem) {
-        this.receiveDamage(iceGolem.calculateDamage(2.0));
+    public void attackedByGoblin(Goblin goblin) {
     }
 
     @Override
@@ -31,7 +29,7 @@ class Goblin extends Attacker {
         this.receiveDamage(knight.calculateDamage(1.25));
     }
 
-    void attackFruitTree() {
+    public void attackFruitTree() {
         this.increaseHP(calculateIncrement(0.15));
     }
 

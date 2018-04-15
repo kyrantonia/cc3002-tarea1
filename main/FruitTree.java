@@ -1,4 +1,6 @@
-class FruitTree implements IAttackable{
+package main;
+
+public class FruitTree implements IAttackable {
     @Override
     public void attackedByGoblin(Goblin goblin) {
         goblin.attackFruitTree();
